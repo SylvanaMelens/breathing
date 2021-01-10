@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+  background: url("./images/abstract-fractales-tomislav-jakupec-pixabay.jpg");
+  background-size: cover;
+}
+
+.App {
+  font-family: "Amatic SC", sans;
+  background-color: transparent;
+  padding-bottom: 5.2em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* CONTAINER */
+
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 320px;
+  max-height: 812px;
+  background-color: transparent;
+}
+
+.main > * {
+  display: flex;
+  flex-direction: column;
+}
+
+/* INFORMATION - DATA-DESCR */
+
+.information {
+  width: 1.5em;
+  height: 1.5em;
+  top: 1.5em;
+  right: 1.5em;
+  position: fixed;
+  color: white;
+}
+
+span[data-descr] {
+  cursor: help;
+}
+
+span[data-descr]:hover::after {
+  content: attr(data-descr);
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  border: 1px #aaa solid;
+  border-radius: 10px;
+  background-color: #040410;
+  color: whitesmoke;
+  font-size: 1.2em;
+  padding: 1em;
+  width: 75%;
+  text-align: justify;
+  opacity: 1;
+}
+
+/* OPTIONS DURATION - SOUND*/
+
+.options {
+  margin: 2em 1em 3em 1em;
+  height: 12vh;
+  width: 200px;
+  color: #bbdefb;
+}
+
+.options-title :last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+h2 {
+  color: #bbdefb;
+  margin-bottom: 0.25em;
+}
+
+.square-options {
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2em;
+}
+
+/* SQUARE SPACE */
+
+.square-space {
+  display: flex;
+  flex-direction: row;
+}
+
+.start-action {
+  width: 320px;
+  height: 100px;
+  color: #bbdefb;
+  margin: 1em 0 0.3em 0;
+  background-color: transparent;
+  padding: 0.2em;
+  font-size: 1.7em;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 1px 20px whitesmoke;
+}
+
+.action {
+  color: white;
+  font-size: 1.7em;
+  letter-spacing: 0.2em;
+  text-shadow: 1px 1px 2px midnightblue;
+  font-weight: 400;
+}
+
+.bloquer,
+.bloquer-invisible {
+  height: 1.5em;
+}
+
+.expirer,
+.inspirer {
+  display: flex;
+  align-items: center;
+}
+
+.bloquer:after {
+  content: "bloquer";
+}
+
+.inspirer:before {
+  content: "inspirer";
+  writing-mode: vertical-rl;
+  transform: scale(-1, -1);
+}
+
+.expirer:before {
+  content: "expirer";
+  writing-mode: vertical-rl;
+}
+
+.square {
+  width: 260px;
+  height: 260px;
+  background-color: transparent;
+  border: 1px dotted midnightblue;
+}
+
+.dot {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  box-shadow: 1px 1px 20px whitesmoke;
+  border-radius: 50%;
+}
+
+/* BALL ANIMATION */
+
+.animateBall-4sec {
+  animation: ball 16s infinite;
+}
+
+.animateBall-5sec {
+  animation: ball 20s infinite;
+}
+
+.animateBall-6sec {
+  animation: ball 24s infinite;
+}
+
+@keyframes ball {
+  from {
+    top: 240px;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: 0;
+  }
+  50% {
+    top: 0;
+    left: 240px;
+  }
+  75% {
+    top: 240px;
+    left: 240px;
+  }
+  to {
+    top: 240px;
+    left: 0;
+  }
+}
+
+:focus {
+  outline: none;
+}
+
+.start-position {
+  left: 0;
+  top: 240px;
+}
+
+/* START-STOP BUTTON */
+
+.start {
+  color: white;
+  background-color: transparent;
+  letter-spacing: 0.2em;
+  align-self: flex-end;
+  margin: 2.3em auto 0 auto;
+  padding: 0.7em;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  border-radius: 0.2em;
+  border: 1px solid grey;
+  box-shadow: 1px 1px 0px whitesmoke;
+}
