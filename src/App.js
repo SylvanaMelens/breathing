@@ -12,6 +12,7 @@ import soundUnmute from './utils/soundUnmute'
 import soundMute from './utils/soundMute'
 
 import './App.css'
+import useVisibility from './hooks/useVisibility'
 
 const App = () => {
   // DEMARRAGE ET DONNEES GLOBALES DE DUREE AVANT LE DEMARRAGE
@@ -40,34 +41,7 @@ const App = () => {
   // OPTIONS QUAND APPLI DEMARREE
 
   // AFFICHAGE TEXTES
-  // déclencheur de condition
-  const [visibilityOption, setVisibilityOption] = useState(true)
-
-  // nom des classes affichant le texte au démarrage
-  const [breathingAction, setBreahingAction] = useState({
-    inspirer: 'inspirer',
-    expirer: 'expirer',
-    bloquer: 'bloquer'
-  })
-
-  // event permettant de changer le nom des classes au clic sur l'icone oeil
-  const handleVisibility = () => {
-    if (visibilityOption) {
-      setVisibilityOption(false)
-      setBreahingAction({
-        inspirer: '',
-        expirer: '',
-        bloquer: 'bloquer-invisible'
-      })
-    } else {
-      setVisibilityOption(true)
-      setBreahingAction({
-        inspirer: 'inspirer',
-        expirer: 'expirer',
-        bloquer: 'bloquer'
-      })
-    }
-  }
+  const [visibilityOption, breathingAction, handleVisibility] = useVisibility()
 
   // SON - ACTIVATION / DESACTIVATION
   // déclencheur de condition
@@ -99,7 +73,7 @@ const App = () => {
       setDotClass(`animateBall-${selectedDuration}sec`)
       setDurationOptions(false)
       setSoundOption(true)
-      // A REFACTORER 
+      // A REFACTORER
       switch (selectedDuration) {
         case '4' :
           setSound4sec(sound4.play())
@@ -120,7 +94,7 @@ const App = () => {
       setStart(true)
       setDotClass('start-position')
       setDurationOptions(true)
-      // A REFACTORER 
+      // A REFACTORER
       switch (selectedDuration) {
         case '4' :
           setSound4sec(sound4.stop())
