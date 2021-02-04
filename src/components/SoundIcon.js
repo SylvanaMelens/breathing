@@ -1,3 +1,8 @@
+/**
+ * Application d'aide à la respiration
+ * @author: Sylvana MELENS - https://sylvanamelens.com
+ */
+
 import SquareOption from '../utils/SquareOption'
 import { IoVolumeMute, IoVolumeHigh } from 'react-icons/io5'
 

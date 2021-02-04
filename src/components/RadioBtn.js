@@ -1,3 +1,8 @@
+/**
+ * Application d'aide à la respiration
+ * @author: Sylvana MELENS - https://sylvanamelens.com
+ */
+
 import { RadioGroup, FormControlLabel, Radio } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import { blue } from '@material-ui/core/colors'

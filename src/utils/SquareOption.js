@@ -1,3 +1,7 @@
+/**
+ * Application d'aide à la respiration
+ * @author: Sylvana MELENS - https://sylvanamelens.com
+ */
 
 const SquareOption = (props) => {
   const { OptionOn, OptionOff, onClick, option } = props

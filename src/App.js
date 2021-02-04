@@ -1,3 +1,8 @@
+/**
+ * Application d'aide à la respiration
+ * @author: Sylvana MELENS - https://sylvanamelens.com
+ */
+
 import React, { useState } from 'react'
 
 import StartButton from './components/StartButton'
@@ -51,6 +56,7 @@ const App = () => {
   const [sound4sec, setSound4sec] = useState(sound4)
   const [sound5sec, setSound5sec] = useState(sound5)
   const [sound6sec, setSound6sec] = useState(sound6)
+  // const [sound6secCustom, setSound6secCustom] = useState(sound6Custom)
 
   // activation du son en fonction de la sélection de l'icone
   const handleSound = () => {

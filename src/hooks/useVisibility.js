@@ -1,3 +1,8 @@
+/**
+ * Application d'aide à la respiration
+ * @author: Sylvana MELENS - https://sylvanamelens.com
+ */
+
 import { useState } from 'react'
 
 const useVisibility = () => {
